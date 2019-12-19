@@ -1,9 +1,9 @@
-int    MAX_DEPTH  = 128;
-int    STAR_NBR   = 500;
-int    TARGET_FPS = 75;
+int    MAX_DEPTH  = 64;
+int    STAR_NBR   = 200;
+int    TARGET_FPS = 30;
 String RENDERER   = JAVA2D; 
 
-double kValue = 500.0;
+double kValue = 450.0;
 double halfWidth;
 double halfHeight;
 
@@ -15,7 +15,7 @@ void setup()
   fullScreen(RENDERER);
   //size(800, 600);
   pg = createGraphics(width,height, RENDERER);
-  //pg.smooth();
+  pg.smooth();
   surface.setResizable(true);
   stars = new Star[STAR_NBR];
   frameRate(TARGET_FPS);
