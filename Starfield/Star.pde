@@ -35,7 +35,19 @@ class Star
     
     //Draw new line
     pg.stroke(stroke);
-    pg.line(spx, spy, sopx, sopy);
+    
+    //USING LINE
+    //pg.line(spx, spy, sopx, sopy);
+    
+    //USING VERTEX
+    pg.beginShape();
+    pg.vertex(spx, spy);
+    pg.vertex(sopx, sopy);
+    pg.endShape();
+    
+    //USING PShape
+    //PShape line = pg.createShape(LINE, spx, spy, sopx, sopy);
+    //pg.shape(line);
     
   }
 }
