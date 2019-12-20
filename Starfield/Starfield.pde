@@ -74,7 +74,7 @@ void draw()
         Position posVals = CalcPos(star.x, star.y, kValue/star.z);
         
         //If star is out of the screen
-        if (star.z <= 0 || (posVals.px <=0 || posVals.px >= width) || (posVals.py <= 0 || posVals.py >= height))
+        if (star.z <= 0)
         {
             //Reposition star
             star = new Star(random(-2000.0, 2000.0)/100.0,
