@@ -1,6 +1,6 @@
 int    MAX_DEPTH  = 64;
-int    STAR_NBR   = 200;
-int    TARGET_FPS = 30;
+int    STAR_NBR   = 500;
+int    TARGET_FPS = 60;
 String RENDERER   = JAVA2D; 
 
 double kValue = 450.0;
@@ -9,6 +9,7 @@ double halfHeight;
 
 Star[] stars;
 PGraphics pg;
+PGraphics text;
 
 void setup() 
 {
@@ -45,7 +46,16 @@ void draw()
     halfHeight = height / 2;
     
     //Display framerate and "FPS graph"
-    println(nf(frameRate, 3,5) + " > " + new String(new char[(int)frameRate]).replace("\0", " ") + "|");
+    //println(nf(frameRate, 2,5) + " > " + new String(new char[(int)frameRate]).replace("\0", " ") + "|");
+    text = createGraphics(150, 60);
+    text.noSmooth();
+    text.beginDraw();
+    text.fill(255);
+    text.textSize(10);
+    text.textAlign(LEFT, TOP);
+    text.loadPixels();
+    text.text(nf(frameRate, 2,2) + " FPS ", 0, 0);
+    text.endDraw();
     
     //Reset screen
     pg.background(0);
@@ -87,6 +97,7 @@ void draw()
 
     //Display rendered image
     image(pg,0,0);
+    image(text,0,0);
 }
 
 void initStars()
