@@ -29,7 +29,7 @@ class Star
       // If 'z' is 0 or lower, reset the star to a new position because it left the screen.
       if (z <=0) 
       {
-          z = width/2;
+          z = random(width/2);
           x = random(-width/2, width/2);
           y = random(-height/2, height/2);
           pz = z;
